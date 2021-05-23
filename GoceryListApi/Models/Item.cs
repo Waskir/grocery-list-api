@@ -11,5 +11,6 @@ namespace GoceryListApi.Models
         public string Name { get; set; }
         public int Qty { get; set; }
         public bool Done { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }
