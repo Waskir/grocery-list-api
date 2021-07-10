@@ -13,7 +13,7 @@ namespace GoceryListApi.Services
         bool AddItem(Item newItem);
         bool DeleteItem(int id);
         bool UpdateItem(Item updatedItem);
-        List<List> GetAllLists();
+        List<ListViewDto> GetAllLists();
         List GetListById(int id);
         bool AddList(List newList);
         bool DeleteList(int id);

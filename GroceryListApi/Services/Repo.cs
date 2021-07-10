@@ -93,11 +93,20 @@ namespace GoceryListApi.Services
             return response;
         }
 
-        public List<List> GetAllLists()
+        public List<ListViewDto> GetAllLists()
         {
-            var response = new List<List>();
+            var response = new List<ListViewDto>();
             // Pobiera wszystkie listy
-            response = _db.Lists.Where(list => list.IsDeleted == false).ToList();
+            response = _db.Lists
+                .Where(list => list.IsDeleted == false)
+                .Select(list => new ListViewDto
+                    {
+                        Id = list.Id,
+                        Name = list.Name,
+                        IsDeleted = list.IsDeleted,
+                        Items = _db.Items.Where(item => item.ListId == list.Id && item.IsDeleted == false).ToList()
+                    }
+                ).ToList();
             return response;
         }
 

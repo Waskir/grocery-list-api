@@ -21,7 +21,7 @@ namespace GoceryListApi.Models
             }
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)//?
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Item>(entity =>
             {

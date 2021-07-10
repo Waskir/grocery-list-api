@@ -12,9 +12,8 @@ namespace GoceryListApi.Models
         public bool IsDeleted { get; set; }
     }
 
-    public class AddListDto
+    public class ListViewDto: List
     {
-        public string Name { get; set; }
-        public bool IsDeleted { get; set; }
+        public ICollection<Item> Items { get; set; }
     }
 }
